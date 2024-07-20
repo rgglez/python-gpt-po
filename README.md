@@ -84,6 +84,10 @@ This command translates `.po` files in the `./locales` folder to German and Fren
 
 The script logs detailed information about the files being processed, the number of translations, and batch details in bulk mode.
 
+## Notes
+
+* You can find the name of the models and the pricing [here](https://openai.com/api/pricing/).
+
 ## License
 
 [MIT](LICENSE)
