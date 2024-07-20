@@ -9,7 +9,7 @@
 
 ## Python GPT PO File Translator
 
-This Python script provides a convenient tool for translating `.po` files using OpenAI's GPT-4 (previous) model. It is designed to handle both bulk and individual translation modes, making it suitable for a wide range of project sizes and `.po` file structures.
+This Python script provides a convenient tool for translating `.po` files using OpenAI's GPT models. It is designed to handle both bulk and individual translation modes, making it suitable for a wide range of project sizes and `.po` file structures.
 
 ## About this fork
 
@@ -96,6 +96,7 @@ The script logs detailed information about the files being processed, the number
 ## Notes
 
 * You can find the name of the models and the pricing [here](https://openai.com/api/pricing/).
+* Learn about [gettext](https://www.gnu.org/software/gettext/) and the [format of PO files](https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html).
 
 ## License
 
