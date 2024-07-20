@@ -52,14 +52,6 @@ Ensure your API key is kept secure and not exposed in shared or public spaces.
 
 ## Installation
 
-### Via PyPI
-
-Install the `gpt-po-translator` package directly from PyPI:
-
-```bash
-pip install gpt-po-translator
-```
-
 ### Manual Installation
 
 For manual installation or to work with the latest code from the repository:
@@ -95,7 +87,7 @@ The script logs detailed information about the files being processed, the number
 
 ## Notes
 
-* You can find the name of the models and the pricing [here](https://openai.com/api/pricing/).
+* You can find the name of the OpenAI ChatGPT models and their pricing [here](https://openai.com/api/pricing/).
 * Learn about [gettext](https://www.gnu.org/software/gettext/) and the [format of PO files](https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html).
 
 ## License
