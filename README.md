@@ -1,6 +1,10 @@
 # Python GPT-4 PO File Translator
 
-This Python script provides a convenient tool for translating `.po` files using OpenAI's GPT-4 model. It is designed to handle both bulk and individual translation modes, making it suitable for a wide range of project sizes and `.po` file structures.
+This Python script provides a convenient tool for translating `.po` files using OpenAI's GPT-4 (previous) model. It is designed to handle both bulk and individual translation modes, making it suitable for a wide range of project sizes and `.po` file structures.
+
+## About the fork
+
+This is a fork of the [pescheckit/python-gpt-po](https://github.com/pescheckit/python-gpt-po) repository. See the [CHANGELOG](CHANGELOG.md) to see the modifications made to this fork.
 
 ## Features
 
@@ -65,7 +69,7 @@ For manual installation or to work with the latest code from the repository:
 Use `gpt-po-translator` as a command-line tool:
 
 ```
-gpt-po-translator --folder [path_to_po_files] --lang [language_codes] [--api_key [your_openai_api_key]] [--fuzzy] [--bulk] [--bulksize [batch_size]] [--folder-language]
+gpt-po-translator --folder [path_to_po_files] --lang [language_codes] [--api_key [your_openai_api_key]] [--fuzzy] [--bulk] [--bulksize [batch_size]] [--folder-language] [--source-language [Language]]
 ```
 
 ### Example

@@ -21,12 +21,13 @@ logging.basicConfig(level=logging.INFO)
 
 class TranslationConfig:
     """ Class to hold configuration parameters for the translation service. """
-    def __init__(self, client, model, bulk_mode=False, fuzzy=False, folder_language=False):  # pylint: disable=R0913
+    def __init__(self, client, model, bulk_mode=False, fuzzy=False, folder_language=False, source_language="English"):  # pylint: disable=R0913
         self.client = client
         self.model = model
         self.bulk_mode = bulk_mode
         self.fuzzy = fuzzy
         self.folder_language = folder_language
+        self.source_language = source_language
 
 
 class TranslationService:
@@ -55,7 +56,7 @@ class TranslationService:
             batch_texts = texts[i:i + self.batch_size]
             batch_info = f"File: {po_file_path}, Batch {i}/{self.total_batches}"
             batch_info += f" (texts {i + 1}-{min(i + self.batch_size, len(texts))})"
-            translation_request = (f"Please translate the following texts from English into {target_language}. "
+            translation_request = (f"Translate the following texts from {self.config.source_language} into {target_language}. "
                                    "Use the format 'Index: Text' for each segment:\n\n")
             for index, text in enumerate(batch_texts, start=i * self.batch_size):
                 translation_request += f"{index}: {text}\n"
@@ -190,7 +191,7 @@ class TranslationService:
         """Translates texts one by one and updates the .po file."""
         for index, text in enumerate(texts):
             logging.info("Translating text %s/%s in file %s", (index + 1), len(texts), po_file_path)
-            translation_request = f"Please translate the following text from English into {target_language}: {text}"
+            translation_request = f"Translate the following text from {self.config.source_language} into {target_language}: {text}"
             translated_texts = []
             self.perform_translation(translation_request, translated_texts, batch=False)
             if translated_texts:
@@ -235,6 +236,7 @@ def main():
     parser = argparse.ArgumentParser(description="Scan and process .po files")
     parser.add_argument("--version", action="version", version=f'%(prog)s {__version__}')
     parser.add_argument("--folder", required=True, help="Input folder containing .po files")
+    parser.add_argument("--source", required=False, choices=["English", "Spanish"], default="English", help="The language of the source strings. Defaults to English")
     parser.add_argument("--lang", required=True, help="Comma-separated language codes to filter .po files")
     parser.add_argument("--fuzzy", action="store_true", help="Remove fuzzy entries")
     parser.add_argument("--bulk", action="store_true", help="Use bulk translation mode")
@@ -250,7 +252,7 @@ def main():
     client = OpenAI(api_key=api_key)
 
     # Create a configuration object
-    config = TranslationConfig(client, args.model, args.bulk, args.fuzzy, args.folder_language)
+    config = TranslationConfig(client, args.model, args.bulk, args.fuzzy, args.folder_language, args.source)
 
     # Initialize the translation service with the configuration object
     translation_service = TranslationService(config)
