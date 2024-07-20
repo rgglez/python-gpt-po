@@ -1,4 +1,13 @@
-# Python GPT-4 PO File Translator
+# python-gpt-go
+
+
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit)
+![GitHub all releases](https://img.shields.io/github/downloads/rgglez/python-gpt-go/total) 
+![GitHub issues](https://img.shields.io/github/issues/rgglez/python-gpt-go) 
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/rgglez/python-gpt-go)
+
+## Python GPT PO File Translator
 
 This Python script provides a convenient tool for translating `.po` files using OpenAI's GPT-4 (previous) model. It is designed to handle both bulk and individual translation modes, making it suitable for a wide range of project sizes and `.po` file structures.
 
@@ -90,4 +99,4 @@ The script logs detailed information about the files being processed, the number
 
 ## License
 
-[MIT](LICENSE)
+Read the [MIT LICENSE](LICENSE) file.
