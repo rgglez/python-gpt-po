@@ -1,7 +1,5 @@
 # python-gpt-po
 
-
-
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit)
 ![GitHub all releases](https://img.shields.io/github/downloads/rgglez/python-gpt-po/total) 
 ![GitHub issues](https://img.shields.io/github/issues/rgglez/python-gpt-po) 
